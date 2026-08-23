@@ -1,4 +1,4 @@
-/* 拍 02 的病号:越界读一颗,答案就歪了
+/* 第 3 个历程 的病号:越界读一颗,答案就歪了
  * 对应教程:tutorial/journey/02-gdb.md
  */
 #include <stdio.h>

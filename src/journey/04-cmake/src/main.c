@@ -1,4 +1,4 @@
-/* 主线拍 04 · 工程化 —— 库与应用分离后的入口
+/* 主线第 5 个历程 · 工程化 —— 库与应用分离后的入口
  * 对应教程:tutorial/journey/04-cmake.md
  */
 #include <stdio.h>

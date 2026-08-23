@@ -1,4 +1,4 @@
-/* 主线拍 06 · 没有屏幕的机器:串口是我们唯一的嘴
+/* 主线第 7 个历程 · 没有屏幕的机器:串口是我们唯一的嘴
  * 对应教程:tutorial/journey/06-qemu-uart.md
  * 目标板:QEMU mps2-an385(Cortex-M3),UART0 = CMSDK APB UART
  */

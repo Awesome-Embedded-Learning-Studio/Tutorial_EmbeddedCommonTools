@@ -71,7 +71,7 @@ export default defineConfig({
   locales: buildLocales(),
 
   head: [
-    ['link', { rel: 'icon', href: projectConfig.favicon || `${projectConfig.base}favicon.ico` }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: projectConfig.favicon || `${projectConfig.base}favicon.ico` }],
   ],
 
   markdown: {
@@ -94,6 +94,7 @@ export default defineConfig({
   },
 
   themeConfig: {
+    logo: `${projectConfig.base}embedbox-mark.svg`,
     nav: projectConfig.nav[primaryLocale.code] || [],
     sidebar: buildSidebar(docsRoot, projectConfig),
 

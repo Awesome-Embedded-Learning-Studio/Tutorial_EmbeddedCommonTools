@@ -1,4 +1,4 @@
-# 主线拍 04 · 工程化 —— 同一个程序,搬进 CMake 工程
+# 主线第 5 个历程 · 工程化 —— 同一个程序,搬进 CMake 工程
 # 对应教程:tutorial/journey/04-cmake.md
 cmake_minimum_required(VERSION 3.16)
 

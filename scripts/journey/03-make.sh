@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ── 拍 03 · 程序长大 ────────────────────────────────────────────
+# ── 第 4 个历程 · 程序长大 ────────────────────────────────────────────
 # 重放 tutorial/journey/03-make.md 的全部命令,并断言关键结果。
 # tier: ci-matrix(ubuntu / windows git-bash)
 #
@@ -36,7 +36,7 @@ banner() { printf '\n──────── %s ────────\n' "$*
 banner "第一幕:单文件时代"
 
 cat > main.c <<'EOF'
-/* 拍 01 出生、拍 02 病愈的主角,目前只有一个文件 */
+/* 第 2 个历程 出生、第 3 个历程 病愈的主角,目前只有一个文件 */
 #include <stdio.h>
 
 int main(void)
@@ -155,4 +155,4 @@ make
 ./hello | grep -q 'journey beat 03: v0.3.0' || { echo "FATAL: 输出不符合预期" >&2; exit 1; }
 
 echo
-echo "✅ 拍 03 · 程序长大 —— 全部断言通过"
+echo "✅ 第 4 个历程 · 程序长大 —— 全部断言通过"

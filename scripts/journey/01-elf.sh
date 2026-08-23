@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ── 拍 01 · 源码→程序 ───────────────────────────────────────────
+# ── 第 2 个历程 · 源码→程序 ───────────────────────────────────────────
 # 重放 tutorial/journey/01-elf.md 的全部命令:把一行 hello.c
 # 逐步变成可执行文件,并把每一段的中间产物拆开看。
 # tier: ci-matrix
@@ -8,7 +8,7 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SRC="$REPO_ROOT/src/journey/01-elf"
 
-command -v gcc >/dev/null 2>&1 || { echo "FATAL: 没有 gcc,请先完成拍 00 体检" >&2; exit 1; }
+command -v gcc >/dev/null 2>&1 || { echo "FATAL: 没有 gcc,请先完成第 1 个历程 体检" >&2; exit 1; }
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -19,8 +19,7 @@ banner() { printf '\n──────── %s ────────\n' "$*
 
 # ═══ 开场:一行命令,先跑起来 ═══
 banner "一行命令,先跑起来"
-gcc hello.c -o hello
-./hello
+gcc hello.c -o hello && ./hello
 ./hello | grep -q 'hello, EmbedBox!' || { echo "FATAL: 输出不符合预期" >&2; exit 1; }
 
 # ═══ 第一步:只跑预处理器 ═══
@@ -77,4 +76,4 @@ banner "size:三个段各占多少"
 size hello
 
 echo
-echo "✅ 拍 01 · 源码→程序 —— 全部断言通过"
+echo "✅ 第 2 个历程 · 源码→程序 —— 全部断言通过"

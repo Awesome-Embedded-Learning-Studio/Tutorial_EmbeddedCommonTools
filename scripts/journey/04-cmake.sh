@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ── 拍 04 · 工程化 ──────────────────────────────────────────────
+# ── 第 5 个历程 · 工程化 ──────────────────────────────────────────────
 # 重放 tutorial/journey/04-cmake.md 的全部命令:CMake 配置、构建、
 # 运行,验证 compile_commands.json,并复验增量构建语义。
 # tier: ci-matrix(产物名在 Windows 上可能带 .exe,脚本做了兼容)
@@ -8,7 +8,7 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SRC="$REPO_ROOT/src/journey/04-cmake"
 
-command -v cmake >/dev/null 2>&1 || { echo "FATAL: 没有 cmake,请回拍 00 补装" >&2; exit 1; }
+command -v cmake >/dev/null 2>&1 || { echo "FATAL: 没有 cmake,请回第 1 个历程 补装" >&2; exit 1; }
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -46,7 +46,7 @@ ls -l build/compile_commands.json
 grep -q 'util\.c' build/compile_commands.json \
   || { echo "FATAL: compile_commands.json 里没有 util.c" >&2; exit 1; }
 
-# ═══ 增量构建:CMake 记着拍 03 那本账 ═══
+# ═══ 增量构建:CMake 记着第 4 个历程 那本账 ═══
 banner "touch src/util.h 之后再构建"
 touch src/util.h
 out="$(cmake --build build 2>&1)"
@@ -65,4 +65,4 @@ if printf '%s\n' "$out" | grep -q 'Building C object'; then
 fi
 
 echo
-echo "✅ 拍 04 · 工程化 —— 全部断言通过"
+echo "✅ 第 5 个历程 · 工程化 —— 全部断言通过"

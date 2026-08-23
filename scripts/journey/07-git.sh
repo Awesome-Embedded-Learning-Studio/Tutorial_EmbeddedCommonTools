@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ── 拍 07 · 记录旅程 ────────────────────────────────────────────
+# ── 第 8 个历程 · 记录旅程 ────────────────────────────────────────────
 # 重放 tutorial/journey/07-git.md 的全部命令:在临时目录里
 # 从零建仓、改坏再救回、制造并解决冲突、打上里程碑 tag。
 # tier: ci-matrix
@@ -27,7 +27,7 @@ cat > README.md <<'EOF'
 
 ## 状态
 
-- 拍 06:串口输出已捕获(证据在 expected-serial.txt)
+- 第 7 个历程:串口输出已捕获(证据在 expected-serial.txt)
 EOF
 
 cat > hello.c <<'EOF'
@@ -101,7 +101,7 @@ cat > README.md <<'EOF'
 
 ## 状态
 
-- 拍 06:串口输出已验证 diff 一致
+- 第 7 个历程:串口输出已验证 diff 一致
 EOF
 git add README.md
 git commit -m "readme: sharpen beat-06 note"
@@ -115,7 +115,7 @@ cat > README.md <<'EOF'
 
 ## 状态
 
-- 拍 06:串口输出已捕获,连 \r\n 都是亲手发的
+- 第 7 个历程:串口输出已捕获,连 \r\n 都是亲手发的
 EOF
 git add README.md
 git commit -m "readme: enrich beat-06 note"
@@ -145,7 +145,7 @@ cat > README.md <<'EOF'
 
 ## 状态
 
-- 拍 06:串口输出已捕获,且与 expected-serial.txt 逐字节一致
+- 第 7 个历程:串口输出已捕获,且与 expected-serial.txt 逐字节一致
 EOF
 git add README.md
 git commit -m "merge polish-readme: pick the precise wording"
@@ -159,4 +159,4 @@ git tag | grep -q 'v0.1-journey' || { echo "FATAL: tag 缺失" >&2; exit 1; }
 git log --oneline
 
 echo
-echo "✅ 拍 07 · 记录旅程 —— 全部断言通过"
+echo "✅ 第 8 个历程 · 记录旅程 —— 全部断言通过"

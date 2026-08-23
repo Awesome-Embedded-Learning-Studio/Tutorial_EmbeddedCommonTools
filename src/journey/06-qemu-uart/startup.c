@@ -1,4 +1,4 @@
-/* 主线拍 06 · 出生证明:向量表 + 复位流程
+/* 主线第 7 个历程 · 出生证明:向量表 + 复位流程
  * 对应教程:tutorial/journey/06-qemu-uart.md
  * 目标板:QEMU mps2-an385(Cortex-M3)
  */

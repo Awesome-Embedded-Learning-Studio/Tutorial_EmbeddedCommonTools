@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# ── 拍 05 · 搬家:交叉编译 ──────────────────────────────────────
+# ── 第 6 个历程 · 搬家:交叉编译 ──────────────────────────────────────
 # 重放 tutorial/journey/05-cross.md 的全部命令:同一份源码交给
 # arm-none-eabi 工具链,对比架构产物,并验证「宿主机跑不了」。
 # tier: ci-linux 起步(ubuntu runner 可 apt 装 gcc-arm-none-eabi)
 #
-# 工具链安装指引(拍 00 体检的建议工具,现在该装了):
+# 工具链安装指引(第 1 个历程 体检的建议工具,现在该装了):
 #   Ubuntu/Debian:  sudo apt install gcc-arm-none-eabi
 #   Arch:           sudo pacman -S arm-none-eabi-gcc
 set -euo pipefail
@@ -81,4 +81,4 @@ if [ "$rc" -eq 0 ]; then
 fi
 
 echo
-echo "✅ 拍 05 · 搬家 —— 全部断言通过(心脏造好了,还差身体)"
+echo "✅ 第 6 个历程 · 搬家 —— 全部断言通过(心脏造好了,还差身体)"

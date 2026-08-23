@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 # 正文命令与配对脚本的一致性检查(铁律 2:命令即引用)。
 #
-# 规则:tutorial/journey/NN-x.md 的 ```bash 围栏里,每条非注释命令行
+# 规则:tutorial/journey/NN-x.md 的 ```bash/```sh 围栏里,每条非注释命令行
 #      必须逐字出现在 scripts/journey/NN-x.sh 中(containment 匹配)。
-# 约定:命令放 ```bash 围栏;输出/文件内容放无语言或 ```c/```text 围栏,
-#      本脚本只检查 bash/sh/shell 围栏。
+# 约定:命令放 ```bash 围栏;输出/文件内容放无语言或 ```c/```text 围栏;
+#      ```shell 围栏是「终端实录」——提示符、命令、输出混排的教学演示,
+#      不承诺 CI 重放,不参与对账。
 # 模式:默认 warn(只报告);LINT_STRICT=1 时有告警即红。
 set -euo pipefail
 
@@ -43,7 +44,7 @@ for md in "${docs[@]}"; do
   cmds_tmp="$(mktemp)"
   trap 'rm -f "$cmds_tmp"' EXIT
   awk '
-    /^```(bash|sh|shell)[[:space:]]*$/ { inblock = 1; next }
+    /^```(bash|sh)[[:space:]]*$/ { inblock = 1; next }
     /^```/ { inblock = 0; next }
     inblock {
       line = $0

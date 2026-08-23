@@ -1,4 +1,4 @@
-# 主线拍 03 · 程序长大 —— 最终 Makefile:变量 + 模式规则 + 头文件依赖
+# 主线第 4 个历程 · 程序长大 —— 最终 Makefile:变量 + 模式规则 + 头文件依赖
 # 对应教程:tutorial/journey/03-make.md
 
 CC      := gcc

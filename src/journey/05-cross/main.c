@@ -1,4 +1,4 @@
-/* 主线拍 05 · 搬家 —— 同一份源码,换个目标机
+/* 主线第 6 个历程 · 搬家 —— 同一份源码,换个目标机
  * 对应教程:tutorial/journey/05-cross.md
  */
 #include <stdio.h>

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# ── 拍 02 · 程序病了 ────────────────────────────────────────────
+# ── 第 3 个历程 · 程序病了 ────────────────────────────────────────────
 # 重放 tutorial/journey/02-gdb.md 的全部命令:用 gdb 脚本化会话
 # 揪出 buggy.c 里故意埋的越界读。
 # tier: ci-matrix
@@ -9,7 +9,7 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 SRC="$REPO_ROOT/src/journey/02-gdb"
 
 command -v gcc >/dev/null 2>&1 || { echo "FATAL: 没有 gcc" >&2; exit 1; }
-command -v gdb >/dev/null 2>&1 || { echo "FATAL: 没有 gdb,请回拍 00 补装" >&2; exit 1; }
+command -v gdb >/dev/null 2>&1 || { echo "FATAL: 没有 gdb,请回第 1 个历程 补装" >&2; exit 1; }
 
 WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
@@ -39,7 +39,7 @@ grep -Eq '#0 +scale' gdb1.log || { echo "FATAL: 回溯缺 scale 帧" >&2; exit 1
 grep -Eq '#1 .*main' gdb1.log || { echo "FATAL: 回溯缺 main 帧" >&2; exit 1; }
 
 # ═══ 会话二:一路 continue 到第五次调用,看越界值 ═══
-banner "gdb 会话二:continue 到 data[4] 那一拍"
+banner "gdb 会话二:continue 到 data[4] 那一步"
 gdb -q -batch -iex 'set debuginfod enabled off' ./buggy \
     -ex 'break scale' \
     -ex 'run' \
@@ -82,4 +82,4 @@ gdb -q -batch -iex 'set debuginfod enabled off' ./buggy-o2 \
 grep -q 'optimized out' gdb4.log || { echo "FATAL: 应观察到 optimized out" >&2; exit 1; }
 
 echo
-echo "✅ 拍 02 · 程序病了 —— 全部断言通过"
+echo "✅ 第 3 个历程 · 程序病了 —— 全部断言通过"
