@@ -3,7 +3,7 @@ title: 第 1 个历程 · 环境体检:先确认机器活着
 order: 0
 verify: scripts/journey/00-env-check.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ bash 5.3 / git 2.55 / gcc 16.1.1 / make 4.4.1;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ bash 5.3 / git 2.55 / gcc 16.1.1 / make 4.4.1;CI:ubuntu-latest
 ---
 
 # 第 1 个历程 · 环境体检:先确认机器活着

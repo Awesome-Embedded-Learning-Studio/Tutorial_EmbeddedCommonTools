@@ -3,7 +3,7 @@ title: 第 2 个历程 · 源码→程序:看着它变,再拆开看
 order: 1
 verify: scripts/journey/01-elf.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ gcc 16.1.1;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ gcc 16.1.1;CI:ubuntu-latest
 ---
 
 # 第 2 个历程 · 源码→程序:看着它变,再拆开看

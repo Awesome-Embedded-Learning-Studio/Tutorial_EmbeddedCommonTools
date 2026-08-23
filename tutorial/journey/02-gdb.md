@@ -3,7 +3,7 @@ title: 第 3 个历程 · 程序病了:printf 够不到的地方
 order: 2
 verify: scripts/journey/02-gdb.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ gcc 16.1.1 / gdb 17.2;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ gcc 16.1.1 / gdb 17.2;CI:ubuntu-latest
 ---
 
 # 第 3 个历程 · 程序病了:printf 够不到的地方

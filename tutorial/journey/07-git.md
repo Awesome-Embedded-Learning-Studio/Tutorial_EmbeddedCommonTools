@@ -3,7 +3,7 @@ title: 第 8 个历程 · 记录旅程:Git 的深度与一份像样的 README
 order: 7
 verify: scripts/journey/07-git.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ git 2.55.0;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ git 2.55.0;CI:ubuntu-latest
 ---
 
 # 第 8 个历程 · 记录旅程:Git 的深度与一份像样的 README

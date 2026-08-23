@@ -3,7 +3,7 @@ title: 第 5 个历程 · 工程化:CMake 与那枚给编辑器的接口
 order: 4
 verify: scripts/journey/04-cmake.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ cmake 4.4.2 / gcc 16.1.1;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ cmake 4.4.2 / gcc 16.1.1;CI:ubuntu-latest
 ---
 
 # 第 5 个历程 · 工程化:CMake 与那枚给编辑器的接口

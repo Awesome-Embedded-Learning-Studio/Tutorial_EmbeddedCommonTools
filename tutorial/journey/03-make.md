@@ -3,7 +3,7 @@ title: 第 4 个历程 · 程序长大:让 make 记住咱们记不住的
 order: 3
 verify: scripts/journey/03-make.sh
 tier: ci-matrix
-verified-on: WSL2(Arch)/ gcc 16.1.1 / GNU Make 4.4.1;CI 矩阵 ubuntu-latest + windows-latest
+verified-on: WSL2(Arch)/ gcc 16.1.1 / GNU Make 4.4.1;CI:ubuntu-latest
 ---
 
 # 第 4 个历程 · 程序长大:让 make 记住咱们记不住的
