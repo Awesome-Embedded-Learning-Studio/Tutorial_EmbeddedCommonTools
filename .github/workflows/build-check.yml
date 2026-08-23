@@ -1,10 +1,33 @@
 name: Build Check
 
 on:
-  pull_request:
+  push:
     branches: [main]
+  pull_request:
+  workflow_dispatch:
 
 jobs:
+  verify:
+    name: Verify (journey replays)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install cross toolchain & emulator
+        run: sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi qemu-system-arm gdb gdb-multiarch
+
+      - name: Lint (commands vs scripts)
+        shell: bash
+        env:
+          LINT_STRICT: '1'
+        run: bash scripts/lint.sh
+
+      - name: Replay all journey scripts
+        shell: bash
+        run: bash scripts/run-all.sh
+
   build:
     runs-on: ubuntu-latest
 

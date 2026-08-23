@@ -51,5 +51,5 @@ export default defineProject({
     mermaid: true,
   },
 
-  favicon: '/EmbedBox/Awesome-Embedded.ico',
+  favicon: '/EmbedBox/embedbox-mark.svg',
 })

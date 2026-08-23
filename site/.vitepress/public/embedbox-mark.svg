@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <!-- EmbedBox mark — 芯片从串口开口说 hello(assets/brand 手绘矢量化,24 网格) -->
+  <rect x="3" y="6.8" width="10.4" height="10.4" rx="2" stroke="#047857" stroke-width="1.6"/>
+  <path d="M0.8 9.2H3M0.8 12H3M0.8 14.8H3" stroke="#047857" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M13.4 9.2H15.4M13.4 14.8H15.4" stroke="#047857" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M13.4 12H16.2V9.6H18.8V12H20.4" stroke="#047857" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22.2" cy="12" r="1.05" fill="#047857"/>
+</svg>

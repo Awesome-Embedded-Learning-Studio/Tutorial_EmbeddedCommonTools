@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(gdb) hello",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/hello",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "cmake-build"
+    }
+  ]
+}

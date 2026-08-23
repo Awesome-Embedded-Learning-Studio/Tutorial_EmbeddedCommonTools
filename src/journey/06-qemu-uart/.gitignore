@@ -1,0 +1,6 @@
+# 学习者在本目录动手实验的产物
+*.o
+hello.elf
+hello.bin
+serial.txt
+qemu.err

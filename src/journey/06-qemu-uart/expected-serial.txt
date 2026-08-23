@@ -1,0 +1,2 @@
+hello, EmbedBox!
+journey beat 06: no OS, just UART (v0.6.0)
