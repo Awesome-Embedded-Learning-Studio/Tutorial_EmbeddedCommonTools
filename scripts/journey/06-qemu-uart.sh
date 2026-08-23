@@ -93,6 +93,10 @@ diff -u expected-serial.txt serial-cmake.txt \
 # ═══ 远程调试:第 3 个历程 的伏笔在此兑现 ═══
 banner "gdbstub:target remote,隔空断点"
 GDB_PORT=12345  # 固定端口,正文命令逐字可核
+# Ubuntu 的原生 gdb 是单架构构建,连 ARM 目标会报 unknown architecture "arm";
+# 那边需要 gdb-multiarch。Arch 等发行版的 gdb 本身就是全架构的,直接用。
+GDB_BIN=gdb
+command -v gdb-multiarch >/dev/null 2>&1 && GDB_BIN=gdb-multiarch
 qemu-system-arm -M mps2-an385 -cpu cortex-m3 -nographic -monitor none \
     -kernel hello.elf -S -gdb tcp::12345 > /dev/null 2>&1 &
 QEMU_PID=$!
@@ -100,7 +104,7 @@ cleanup_qemu() { kill "$QEMU_PID" 2>/dev/null || true; }
 trap cleanup_qemu EXIT
 sleep 1
 set +e
-timeout 20 gdb -q -batch -iex 'set debuginfod enabled off' \
+timeout 20 "$GDB_BIN" -q -batch -iex 'set debuginfod enabled off' \
     -ex "target remote localhost:12345" \
     -ex 'break main' \
     -ex 'continue' \

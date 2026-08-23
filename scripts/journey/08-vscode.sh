@@ -13,15 +13,17 @@ command -v node >/dev/null 2>&1 || { echo "FATAL: 缺 node(本仓库构建本身
 banner() { printf '\n──────── %s ────────\n' "$*"; }
 
 banner "机械检查:三份配置存在且是合法 JSON"
+# 注意:路径一律走 argv,不拼进 -e 的 JS 字符串——git-bash 调 Windows 原生 node 时
+# 只转换参数里的 POSIX 路径,嵌在字符串里的 /d/a/... 会被 node 当成「当前盘的 \d\a\...」。
 for f in settings.json launch.json tasks.json; do
   [ -e "$DOTVS/$f" ] || { echo "FATAL: 缺 $DOTVS/$f" >&2; exit 1; }
-  node -e "JSON.parse(require('fs').readFileSync('$DOTVS/$f','utf8'))"
+  node -e "JSON.parse(require('fs').readFileSync(process.argv[1],'utf8'))" "$DOTVS/$f"
   echo "  [ok] $f"
 done
 
 banner "机械检查:launch 引用的 preLaunchTask 在 tasks.json 里存在"
-task_label="$(node -e "console.log(JSON.parse(require('fs').readFileSync('$DOTVS/launch.json','utf8')).configurations[0].preLaunchTask)")"
-node -e "const ts=JSON.parse(require('fs').readFileSync('$DOTVS/tasks.json','utf8')).tasks; process.exit(ts.some(t=>t.label==='$task_label')?0:1)" \
+task_label="$(node -e "console.log(JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).configurations[0].preLaunchTask)" "$DOTVS/launch.json")"
+node -e "const ts=JSON.parse(require('fs').readFileSync(process.argv[1],'utf8')).tasks; process.exit(ts.some(t=>t.label==='$task_label')?0:1)" "$DOTVS/tasks.json" \
   || { echo "FATAL: tasks.json 里没有 '$task_label'" >&2; exit 1; }
 echo "  [ok] preLaunchTask '$task_label' 可解析"
 

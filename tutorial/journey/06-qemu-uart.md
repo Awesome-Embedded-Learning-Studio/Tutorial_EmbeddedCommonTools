@@ -340,6 +340,8 @@ gdb -q -batch -iex 'set debuginfod enabled off' \
 
 (先把 QEMU 用 `-S -gdb tcp::12345` 起在后台——`-S` 让它开机即停,`-gdb` 打开一个 gdbstub 服务口。)
 
+这里有个发行版分岔,先打预防针:Ubuntu 的原生 `gdb` 是单架构构建,连上 ARM 目标会警告 `unknown architecture "arm"`,然后当场失联——Ubuntu 用户要请的是 `gdb-multiarch`(`sudo apt install gdb-multiarch`),之后把命令里的 `gdb` 换成 `gdb-multiarch`,其余一字不动;Arch 这类发行版的 gdb 生来全架构,没有这道坎。配对脚本会自己挑人。
+
 ```text
 Reset_Handler () at startup.c:39
 39	    while (dst < &_edata)              /* .data:把行李从 flash 搬进 RAM */
